@@ -26,7 +26,6 @@
     transform: rotate(360deg);
   }
 }
-
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -39,4 +38,93 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.counter-button {
+  font-size: 24px;
+  padding: 12px 24px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3498db, #6dd5fa); 
+  color: white;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.counter-button:hover {
+  background: linear-gradient(135deg, #3498db, #6dd5fa); 
+  border-color: #ffffff;
+  color: #ffd700; 
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes jump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.count {
+  display: inline-block; 
+  transition: color 0.2s ease-in-out;
+}
+
+.count.increase {
+  color: #2ecc71; 
+  animation: jump 0.5s ease; 
+}
+
+.count.decrease {
+  color: #e74c3c; 
+  animation: jump 0.5s ease; 
+}
+
+.counter-button:active {
+  transform: scale(0.95); 
+}
+
+.favorite-message {
+  color: #2ecc71; 
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 15px;
+  animation: fadeIn 1s ease-in-out, colorChange 2s infinite alternate;
+  text-shadow: 0 0 8px rgba(46, 204, 113, 0.8), 0 0 12px rgba(46, 204, 113, 0.5); 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes colorChange {
+  from {
+    color: #2ecc71;
+    text-shadow: 0 0 8px rgba(46, 204, 113, 0.8);
+  }
+  to {
+    color: #e74c3c;
+    text-shadow: 0 0 8px rgba(231, 76, 60, 0.8);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.favorite-message {
+  animation: fade 0.5s ease-in-out; 
 }
