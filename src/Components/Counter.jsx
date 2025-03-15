@@ -11,7 +11,7 @@ export function Counter() {
     } else if (count < 0) {
       setAnimationClass('decrease');
     }
-    const timer = setTimeout(() => setAnimationClass(''), 500); // Duración de la animación
+    const timer = setTimeout(() => setAnimationClass(''), 500); 
     return () => clearTimeout(timer);
   }, [count]);
 
